@@ -1,89 +1,864 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VIRTUALLY TESTING FOUNDATION</title>
+    <link
+      rel="shortcut icon"
+      type="images/png"
+      sizes="100x100"
+      href="images/vtf-logo.png"
+    />
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.9.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.9.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <!-- header section starts  -->
+
+    <header class="header">
+      <img src="images/vtf-logo.png" />
+      <a href="#" class="logo" id="log"> VTF </a>
+      <!-- <i class="fas fa-hiking"></i> -->
+
+      <nav class="navbar">
+        <div id="nav-close" class="fas fa-times"></div>
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#shop">Courses</a>
+        <a href="#packages">Our Team</a>
+        <a href="#reviews">reviews</a>
+        <a href="#blogs">blogs</a>
+      </nav>
+
+      <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <!-- <a href="#" class="fas fa-shopping-cart"></a> -->
+        <div id="search-btn" class="fas fa-search"></div>
+      </div>
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- search form  -->
+
+    <div class="search-form">
+      <div id="close-search" class="fas fa-times"></div>
+
+      <form action="">
+        <input
+          type="search"
+          name=""
+          placeholder="search here..."
+          id="search-box"
+        />
+        <label for="search-box" class="fas fa-search"></label>
+      </form>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <!-- home section starts  -->
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+    <section class="home" id="home">
+      <div class="swiper home-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div
+              class="box"
+              style="background: url(images/home-bg1.jpg) no-repeat"
+            >
+              <div class="content">
+                <h3>Beginner Internship</h3>
+                <span>10 - Weeks,10 Hours/Week</span>
+                <p>
+                  The Intern gains Minimal Growth in network Visibility should
+                  be High School or above, should have a Computer/Internet &
+                  must know English Fundamentals
+                </p>
+                <a href="#" class="btn">get started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="box second"
+              style="background: url(images/home-bg2.jpg) no-repeat"
+            >
+              <div class="content">
+                <h3>Advanced Internship</h3>
+                <span>3 months,30hrs / week</span>
+                <p>
+                  Students will be required to have a prior understanding of
+                  computers, however will be given access to the VTF cloud along
+                  with higher level mentorship. A certificate of completion will
+                  be given upon completion.The student must be pursing Bachelor
+                  Degree or above,must have Advanced Computer Knowledge,English
+                  Fluency,must be Accountable and Professional,must have the
+                  ability to create Virtual Machines & Slack/Discord/GDrive
+                  Knowledge
+                </p>
+                <a href="#" class="btn">get started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="box"
+              style="background: url(images/home-bg3.jpg) no-repeat"
+            >
+              <div class="content">
+                <span>The first and only </span>
+                <h3>Non Profit offering Internship</h3>
+                <p>
+                  At VTF you can get professional exprience across technical and
+                  non technical positions
+                </p>
+                <a href="#" class="btn">get started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- category section starts  -->
+
+    <section class="category">
+      <h1 class="heading">Services</h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="images/category1.jpg" alt="" />
+          <h3>Education</h3>
+          <p>Trainings, Workshops, technical projects and much more...</p>
+          <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+          <img src="images/category2.jpg" alt="" />
+          <h3>Internsips</h3>
+          <p>Technical and management track hands-on exprience</p>
+          <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+          <img src="images/category3.jpg" alt="" />
+          <h3>Services for non-profits</h3>
+          <p>
+            Logistics, digital design, board governance services to other
+            communities
+          </p>
+          <a href="#" class="btn">read more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- category section ends -->
+
+    <!-- about section starts  -->
+
+    <section class="about" id="about">
+      <div class="image">
+        <img src="images/about.jpg" alt="" />
+      </div>
+
+      <div class="content">
+        <h3>Institution</h3>
+        <p>
+          Virtually Testing is a California, USA based 501(c)3 volunteer-run
+          nonprofit organization. Our foundation is funded by individuals or
+          corporate or government donations. Our mission is to serve a
+          cybersecurity focused community by organizing speaker events, hands-on
+          workshops, conferences, etc. Our members advance their skills or learn
+          from scratch to successfully access the competitive trending and
+          evolving cybersecurity industry.
+        </p>
+        <a href="#" class="btn">read more</a>
+      </div>
+    </section>
+
+    <!-- about section ends -->
+
+    <!-- Jubotron starts -->
+    <section class="features1" id="features1">
+      <div class="heading1">
+        <span>our features</span>
+        <h1>what makes us different?</h1>
+      </div>
+
+      <div class="box-container1">
+        <div class="box1">
+          <div class="image1">
+            <img src="images/background-photo1.png" alt="" />
+          </div>
+          <div class="content1">
+            <h3>
+              Get Started With
+              <span class="line-down1">Beginner </span>
+              Internship
+            </h3>
+            <p>
+              Students will be introduced into the world of cybersecurity and
+              given simple tasks to begin their journey. Beginner internships
+              are available to everyone.Every 10 Hours, 10 Weeks is the time and
+              its Flexible, Self-Paced and the basic requirements are High
+              School or above,intern should have a Computer/Internet & should
+              have fundamentals knowledge of English Fundamentals
+            </p>
+            <a href="#" class="btn1">read more</a>
+          </div>
+        </div>
+
+        <div class="box1">
+          <div class="image1">
+            <img src="images/background-photo.png" alt="" />
+          </div>
+          <div class="content1">
+            <h3>
+              Experience More With
+              <span class="line-down1">Advanced</span> Internship
+            </h3>
+            <p>
+              Students will be required to have a prior understanding of
+              computers, however will be given access to the VTF cloud along
+              with higher level mentorship. A certificate of completion will be
+              given upon completion.The minimal requirements are Bachelor Degree
+              or above,Advanced Computer Knowledge,English Fluency,Accountable
+              and Professional,Ability to create Virtual
+              Machines,Slack/Discord/GDrive Knowledge
+            </p>
+            <a href="#" class="btn1">read more</a>
+          </div>
+        </div>
+
+        <div class="box1">
+          <div class="image1">
+            <img src="images/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="" />
+          </div>
+          <div class="content1">
+            <h3>experienced <span class="line-down1">team</span> members</h3>
+            <p>
+              The internship given by VTF has been extremely rewarding
+              experience. Working in VTF under the guidance of experanced people
+              who want to share thier knowledge of Cybersecurity with you and
+              help you become a better professional is invaluable
+            </p>
+            <a href="#" class="btn1">read more</a>
+          </div>
+        </div>
+
+        <div class="box1">
+          <div class="image1">
+            <img
+              src="images/campaign-creators-gMsnXqILjp4-unsplash.jpg"
+              alt=""
+            />
+          </div>
+          <div class="content1">
+            <h3>
+              Non profit Organization Offering
+              <span class="line-down1">Internships </span>To Gain Experiance
+            </h3>
+            <p>
+              The First And Ony Non Profit Organization Offering Internship.At
+              VTF you can get across technical and non - technicl Positions.
+            </p>
+            <a href="#" class="btn1">read more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Jubotron ends-->
+
+    <!-- shop section starts  -->
+
+    <section class="shop" id="shop">
+      <h1 class="heading">featured Courses</h1>
+
+      <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide">
+            <div class="image">
+              <img
+                src="images/mikhail-fesenko-42qDooTUc4A-unsplash.jpg"
+                alt=""
+              />
+              <div class="icons">
+                <a href="#" class="fas fa-eye"></a>
+                <a href="#" class="fas fa-share"></a>
+              </div>
+            </div>
+            <div class="content">
+              <h3>Ethical Hacking</h3>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slide">
+            <div class="image">
+              <img src="images/prd2.png" alt="" />
+              <div class="icons">
+                <a href="#" class="fas fa-eye"></a>
+                <a href="#" class="fas fa-share"></a>
+              </div>
+            </div>
+            <div class="content">
+              <h3>Cyber Crime Investigation</h3>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slide">
+            <div class="image">
+              <img src="images/prd3.png" alt="" />
+              <div class="icons">
+                <a href="#" class="fas fa-eye"></a>
+                <a href="#" class="fas fa-share"></a>
+              </div>
+            </div>
+            <div class="content">
+              <h3>Bug Bounty</h3>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slide">
+            <div class="image">
+              <img src="images/prd4.png" alt="" />
+              <div class="icons">
+                <a href="#" class="fas fa-eye"></a>
+                <a href="#" class="fas fa-share"></a>
+              </div>
+            </div>
+            <div class="content">
+              <h3>Network Security</h3>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slide">
+            <div class="image">
+              <img src="images/prd5.png" alt="" />
+              <div class="icons">
+                <a href="#" class="fas fa-eye"></a>
+                <a href="#" class="fas fa-share"></a>
+              </div>
+            </div>
+            <div class="content">
+              <h3>Cybers forensics</h3>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slide">
+            <div class="image">
+              <img src="images/prd6.png" alt="" />
+              <div class="icons">
+                <a href="#" class="fas fa-eye"></a>
+                <a href="#" class="fas fa-share"></a>
+              </div>
+            </div>
+            <div class="content">
+              <h3>Cloud Securty</h3>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <!-- shop section ends -->
+
+    <!-- packages section starts  -->
+
+    <section class="packages" id="packages">
+      <h1 class="heading">Our Team</h1>
+
+      <div class="box-container">
+        <div class="box">
+          <div class="image">
+            <img src="images/team-member1.png" alt="" />
+          </div>
+          <div class="content">
+            <h3>Victor Monga</h3>
+            <p>CEO & Co-founder of Virtually Testing Foundation</p>
+            <!-- <div class="price">$250 - $450</div> -->
+            <a href="#" class="btn">Connect</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="image">
+            <img src="images/team-member2.png" alt="" />
+          </div>
+          <div class="content">
+            <h3>Mallory Vega</h3>
+            <p>Director of Operations at Virtually Testing Foundation</p>
+            <!-- <div class="price">$250 - $450</div> -->
+            <a href="#" class="btn">Connect</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="image">
+            <img src="images/team-member3.png" alt="" />
+          </div>
+          <div class="content">
+            <h3>Prince Khunt</h3>
+            <p>Operations Mananger at Virtually Testing Foundation.</p>
+            <!-- <div class="price">$250 - $450</div> -->
+            <a href="#" class="btn">Connect</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- packages section ends -->
+
+    <!-- reviews section starts  -->
+
+    <section class="reviews" id="reviews">
+      <h1 class="heading">client's reviews</h1>
+
+      <div class="swiper review-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide">
+            <p class="text">
+              VTF has been my first experience into the professional world and
+              has already given me sense of accomplishment and I am excited to
+              dedicate myself to the organization everyday.
+            </p>
+            <div class="user">
+              <img src="images/pc1.png" alt="" />
+              <div class="info">
+                <h3>Hari Kishore</h3>
+                <span>Cyber Security Intern</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slide">
+            <p class="text">
+              Mentorship program offered by Virtually Testing Foundation has
+              helped community gain cyber security skills
+            </p>
+            <div class="user">
+              <img src="images/pc2.png" alt="" />
+              <div class="info">
+                <h3>Prasad Murgeshan</h3>
+                <span>Network Security Intern</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slide">
+            <p class="text">
+              Virtually Testing helped me gain the skills I needed to pass AWS
+              certification. I highly recommend others to join virtually testing
+              mission.
+            </p>
+            <div class="user">
+              <img src="images/pc3.png" alt="" />
+              <div class="info">
+                <h3>Azay pdr</h3>
+                <span>Backend Engineer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slide">
+            <p class="text">
+              The cyber security internship was very comprehensive and easy to
+              understand. The instructors made sure that they are giving the
+              information in a way that won't make me confused. Thank you so
+              much for this great internship!
+            </p>
+            <div class="user">
+              <img src="images/pc4.png" alt="" />
+              <div class="info">
+                <h3>Ayush</h3>
+                <span>Cyber security Intern</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slide">
+            <p class="text">
+              A detailed review of one of the most important skills in vtf was
+              information seeking. In particular, I enjoyed the tasks on
+              Mendeley and reference management tools. Highly recommended!
+            </p>
+            <div class="user">
+              <img src="images/pic5.png" alt="" />
+              <div class="info">
+                <h3>dhananjay</h3>
+                <span>intern</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide slide">
+            <p class="text">
+              Very interesting internship, better done when in an academic
+              context and with an ongoing project to carry out the exercices
+              for. If you don't have access to a university library, you will be
+              very limited, but the course presents some alternatives for us
+              professionals who are still interested in researching and
+              documenting our work with a more scientific approach.
+            </p>
+            <div class="user">
+              <img src="images/pic6.png" alt="" />
+              <div class="info">
+                <h3>Akaash</h3>
+                <span>front end developer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- reviews section ends -->
+
+    <!-- services section starts  -->
+
+    <section class="services">
+      <h1 class="heading">what we offer</h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="images/serv6-removebg-preview.png" alt="" />
+          <h3>Cyber security Engineer</h3>
+          <p>
+            penetration and vulnerability testing · Firewall and intrusion
+            detection/prevention · MITRE ATT&CK · Engineering · Ethical Hacking
+            · Cybercrime Investigation
+          </p>
+          <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+          <img src="images/serv1-removebg-preview.png" alt="" />
+          <h3>Front-End Developer</h3>
+          <p>
+            Proficient in website development and programming languages.Have
+            understanding of key website design principles and SEO (Search
+            Engine Optimization) optimization.Have the ability to use client
+            input to create functional, creative and user-friendly web page.Have
+            the ability to test and debug websites.Observant and able to remain
+            focused on tasks for long periods of time.
+          </p>
+          <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+          <img src="images/serv2-removebg-preview.png" alt="" />
+          <h3>Back-End Developer</h3>
+          <p>
+            Proficient in scripting languages.Have in-depth knowledge and
+            understanding of the entire web development process (design,
+            development, and deployment).Have the ability to use client input to
+            create functional, creative and user-friendly web page.Have the
+            ability to test and debug website(s) code.Excellent verbal and
+            written communication skills
+          </p>
+          <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+          <img src="images/serv3-removebg-preview.png" alt="" />
+          <h3>Wordpress Developer</h3>
+          <p>
+            Experience building user interfaces for websites and/or web
+            applications.Experience designing and developing responsive design
+            websites.Have the ability to use client input to create functional,
+            creative and user-friendly web pages.Ability to understand CSS
+            changes and their ramifications to ensure consistent style across
+            platforms and browsers.Ability to convert comprehensive layout and
+            wireframes into working HTML pages.
+          </p>
+          <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+          <img src="images/serv4-removebg-preview.png" alt="" />
+          <h3>Red Team - Developer</h3>
+          <p>
+            Proficient in PoSh, Shell, Python scripting language.Have the
+            ability to test and debug code.Excellent verbal and written
+            communication skills
+          </p>
+          <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+          <img src="images/serv5.png" alt="" />
+          <h3>IAM Team</h3>
+          <p>
+            Proficient in Tickets management.Excellent communication and
+            interpersonal skills.Proficient in Administrative and Writing
+            Skills.Proficient in provisioning support.Proficient Time Management
+          </p>
+          <a href="#" class="btn">read more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- services section ends -->
+
+    <!-- blogs section starts  -->
+
+    <section class="blogs" id="blogs">
+      <h1 class="heading">our daily posts</h1>
+
+      <div class="swiper blogs-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide">
+            <img src="images/img1.png" alt="" />
+            <div class="icons">
+              <a href="#"> <i class="fas fa-calendar"></i> 15th July, 2022 </a>
+              <a href="#"> <i class="fas fa-user"></i> by admin </a>
+            </div>
+            <h3>Art of Scaling Red Team Engagements.</h3>
+            <p>
+              Each of #pentesting projects costs about 30 to 50% of the security
+              budget every time you consider, but wait, what about a consistent
+              red team engagements automatically testing #security controls?
+            </p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="swiper-slide slide">
+            <img src="images/img2.png" alt="" />
+            <div class="icons">
+              <a href="#"> <i class="fas fa-calendar"></i> 14th July, 2022 </a>
+              <a href="#"> <i class="fas fa-user"></i> by admin </a>
+            </div>
+            <h3>Begineer & Advanced Internships.</h3>
+            <p>
+              According to Indeed.com, "Gaining industry #experience has
+              significant benefits whether you are in high school, college or
+              entering into the workforce. Regardless of your current education
+              level or desired career path, an #internship can encourage your
+              professional #growth." Virtually Testing Foundation is committed
+              to offer internship programs for #VTFoundation members throughout
+              the year.
+            </p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="swiper-slide slide">
+            <img src="images/img3.png" alt="" />
+            <div class="icons">
+              <a href="#"> <i class="fas fa-calendar"></i> 21st Aug, 2021 </a>
+              <a href="#"> <i class="fas fa-user"></i> by admin </a>
+            </div>
+            <h3>AWS hands-on labs.</h3>
+            <p>
+              Virtually Testing Foundation is honored to partner with Women +
+              Cybersecurity = Women's Society of Cyberjutsu and empower them
+              with AWS hands-on labs.
+            </p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="swiper-slide slide">
+            <img src="images/img4.png" alt="" />
+            <div class="icons">
+              <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
+              <a href="#"> <i class="fas fa-user"></i> by admin </a>
+            </div>
+            <h3>Hiring!</h3>
+            <p>
+              A lack of experience doesn’t mean a lack of skills, Virtually
+              Testing Foundation is determined to offer you a cohort based
+              #internship. #flexiblehours #enterylevel #cybersecurity.
+            </p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="swiper-slide slide">
+            <img src="images/img5.png" alt="" />
+            <div class="icons">
+              <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
+              <a href="#"> <i class="fas fa-user"></i> by admin </a>
+            </div>
+            <h3>Win CCSK training.</h3>
+            <p>
+              Participate to win Cloud Security Alliance CCSK training vouchers!
+              #CCSK certification increases employment opportunities by filling
+              the skills-gap for cloud-certified #professionals.
+            </p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="swiper-slide slide">
+            <img src="images/img6.png" alt="" />
+            <div class="icons">
+              <a href="#"> <i class="fas fa-calendar"></i> 21st may, 2021 </a>
+              <a href="#"> <i class="fas fa-user"></i> by admin </a>
+            </div>
+            <h3>Red Team - Script Developer</h3>
+            <p>
+              Are you looking to enhance your hands-on scripting experience in
+              an advance level project? Join a 3-months volunteer #internship at
+              Virtually Testing Foundation.
+            </p>
+            <a href="#" class="btn">read more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- blogs section ends -->
+
+    <!-- newsletter section  -->
+
+    <section class="newsletter">
+      <div class="content">
+        <h1 class="heading">subscirbe now</h1>
+        <p>
+          Email notifications are the best and the easiest way to inform
+          subscribers about our internship's that have happened and subscribe
+          for our updates for the latest updates
+        </p>
+        <form action="">
+          <input
+            type="email"
+            name=""
+            placeholder="enter your email"
+            id=""
+            class="email"
+          />
+          <input type="submit" value="subscirbe" class="btn" />
+        </form>
+      </div>
+    </section>
+
+    <section class="clients">
+      <div class="swiper clients-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide silde">
+            <img src="images/partner1.png" alt="" />
+          </div>
+          <div class="swiper-slide silde">
+            <img src="images/partner2.png" alt="" />
+          </div>
+          <div class="swiper-slide silde">
+            <img src="images/partner3.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>quick links</h3>
+          <a href="#home">home</a>
+          <a href="#about">about</a>
+          <a href="#shop">Courses</a>
+          <a href="#packages">Our Team</a>
+          <a href="#reviews">reviews</a>
+          <a href="#blogs">blogs</a>
+        </div>
+
+        <div class="box">
+          <h3>extra links</h3>
+          <a href="#">ask questions</a>
+          <a href="#">terms of use</a>
+          <a href="#">privacy policy</a>
+        </div>
+
+        <div class="box">
+          <h3>contact info</h3>
+          <a href="#">
+            <i class="fas fa-envelope"></i>
+            noreply@virtuallytestingfoundation.org
+          </a>
+          <a href="#"> <i class="fas fa-map"></i>Los Angeles, CA 90048, USA</a>
+        </div>
+
+        <div class="box">
+          <h3>follow us</h3>
+          <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+          <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+          <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+          <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+          <a href="#"> <i class="fab fa-github"></i> github </a>
+        </div>
+      </div>
+
+      <div class="credit">
+        created by <span>Akaash A Vakharia</span> | all rights reserved!
+      </div>
+    </section>
+
+    <!-- footer section ends -->
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
   </body>
 </html>
