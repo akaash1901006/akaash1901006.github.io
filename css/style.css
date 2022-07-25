@@ -351,6 +351,8 @@ section {
 .home .box .content {
   width: 50rem;
   background: rgba(255, 122, 89, 0.5);
+  padding: 10px;
+  border-radius: 5%;
 }
 
 .home .box .content span {
