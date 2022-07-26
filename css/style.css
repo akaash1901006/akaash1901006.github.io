@@ -467,7 +467,7 @@ section {
 }
 
 .home .box .content {
-  width: 50rem;
+  width: 60rem;
   background: rgba(0, 0, 0, 0.7);
   /* background: rgba(255, 122, 89, 0.5); */
   padding: 20px 10px;
@@ -500,7 +500,7 @@ section {
 }
 
 .home .box .content h3 {
-  font-size: 6rem;
+  font-size: 4rem;
   color: #ffffff;
   padding-top: 0.5rem;
   text-transform: uppercase;
