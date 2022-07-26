@@ -142,6 +142,66 @@ section {
   font-size: 1.7rem;
 }
 
+@media (min-width: 998px) {
+  .category {
+    margin-top: -150px;
+  }
+}
+
+/* Collapsible/Dropdown starts */
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.accordion .contentBx {
+  position: relative;
+  margin: 10px 20px;
+}
+
+.accordion .contentBx .label {
+  position: relative;
+  padding: 10px;
+  background: #aaa;
+  color: #000;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.accordion .contentBx .label::before {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+
+.accordion .contentBx.active .label::before {
+  content: "-";
+}
+
+.accordion .contentBx .content {
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 5px 0;
+  border-radius: 5px;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  overflow-y: auto;
+  font-size: 15px;
+}
+
+.accordion .contentBx.active .content {
+  height: 150px;
+  padding: 10px;
+}
+
+/* Collapsible/Dropdown ends */
+
 /* Jumbotron */
 
 .btn {
@@ -183,7 +243,7 @@ section {
 }
 
 .header.active {
-  background: #fff;
+  background: #000;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
@@ -191,7 +251,8 @@ section {
 .header .logo {
   margin-right: auto;
   font-size: 3.5rem;
-  color: #10221b;
+  /* color: #10221b; */
+  color: #ffffff;
   font-weight: bolder;
 }
 
@@ -204,7 +265,8 @@ section {
   margin-left: 2rem;
   font-size: 2rem;
   font-weight: 600;
-  color: #000000;
+  /* color: #000000; */
+  color: #ffffff;
 }
 
 .header .navbar a:hover {
@@ -223,7 +285,8 @@ section {
   font-size: 2.5rem;
   margin-left: 2rem;
   cursor: pointer;
-  color: #10221b;
+  color: #ffffff;
+  /* color: #10221b; */
 }
 
 .header .icons a:hover,
@@ -350,7 +413,8 @@ section {
 
 .home .box .content {
   width: 50rem;
-  background: rgba(255, 122, 89, 0.5);
+  background: rgb(255, 255, 255, 0.4);
+  /* background: rgba(255, 122, 89, 0.5); */
   padding: 10px;
   border-radius: 5%;
   margin-top: 10%;
@@ -406,11 +470,16 @@ section {
   color: #219150;
 }
 
-.category .box-container .box p {
+.category .box-container .box .lnk {
   font-size: 1.5rem;
   color: #10221b;
   padding: 1rem 0;
   line-height: 2;
+}
+
+.category .box-container .box .lnk:hover {
+  color: blue;
+  font-size: 1.7rem;
 }
 
 .about {
