@@ -108,6 +108,11 @@ section {
   margin-top: 2%;
 }
 
+#search-btn img {
+  height: 90px;
+  width: 90px;
+}
+
 .features1 .box-container1 .box1:last-child {
   margin-bottom: 0;
 }
@@ -231,7 +236,7 @@ section {
   margin-bottom: 32px;
   display: flex;
   justify-content: center;
-  background-color: tomato;
+  background-color: rgba(108, 185, 41, 0.862);
 }
 .announcements1 span {
   padding-top: 2rem;
@@ -286,7 +291,7 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  padding: 2rem 9%;
+  padding: 0.5rem 9%;
   z-index: 1000;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -294,6 +299,33 @@ section {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+#label-mark {
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
+    -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  font-family: sans-serif;
+  /* background: #222; */
+  color: darkred;
+  /* margin-top: -320px; */
+
+  font-size: 40px;
+  /* margin-left: auto; */
+  /* padding-left: 90px; */
+  /* margin-bottom: 90px; */
+  margin-top: 120px;
+  margin-bottom: 25px;
+  border: 3px double red;
+  padding: 20px;
+}
+
+@media (max-width: 1382px) {
+  #label-mark {
+    display: flex;
+    font-size: 30px;
+    padding-left: auto;
+    /* margin-top: ; */
+  }
 }
 
 .header.active {
@@ -311,8 +343,9 @@ section {
 }
 
 .header img {
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
+  padding: -2px 0;
   /* margin: auto 25% auto; */
 }
 
@@ -458,12 +491,19 @@ section {
   -ms-flex-pack: end;
   justify-content: flex-end;
   padding: 2rem 9%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* height: 60%; */
 }
 
 .home .box.second {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+  /* height: 60%; */
 }
 
 .home .box .content {
@@ -472,8 +512,18 @@ section {
   /* background: rgba(255, 122, 89, 0.5); */
   padding: 20px 10px;
   border-radius: 7%;
-  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 10%; */
   /* padding: 10px; */
+  margin: 0 auto;
+}
+
+@media (max-width: 586px) {
+  .home .box .content {
+    /* margin: 10% auto; */
+    width: 60%;
+  }
 }
 
 .btn3 {
@@ -1091,7 +1141,7 @@ section {
     position: fixed;
     top: 0;
     left: -110%;
-    background: #fff;
+    background: #000;
     z-index: 10000;
     width: 35rem;
     height: 100%;
